@@ -15,7 +15,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-    func twoSum(_ nums: [Int], _ target: Int) -> [Int]? {
+    func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
         for var i in 0 ..< nums.count {
             for var j in i + 1 ..< nums.count {
                 if nums[i] + nums[j] == target {
@@ -23,8 +23,18 @@ class ViewController: UIViewController {
                 }
             }
         }
-        return nil;
+        fatalError("intput error!")
     }
 
+//    func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
+//        var dict = [Int: Int]();
+//        for (i, num) in nums.enumerated() {
+//            if let last = dict[target - num] {
+//                return [last, i]
+//            }
+//            dict[num] = i
+//        }
+//        fatalError("intput error!")
+//    }
 }
 
