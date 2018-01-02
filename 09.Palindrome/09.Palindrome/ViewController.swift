@@ -15,29 +15,46 @@ class ViewController: UIViewController {
 
     }
 
-    //主要注意: 如果使用07题反转数字的方法解决本题目, 会有溢出的问题.
     func isPalindrome(_ x: Int) -> Bool {
-
-        if x < 0 || (x % 10 == 0 && x != 0) {
+        if x < 0 {
             return false
-        }
-
-        if x / 9 == 0 {
+        }else if x == 0 {
             return true
-        }
-
-        var temp = x
-
-        var reverseNum = 0
-
-        while reverseNum < temp {
-            reverseNum = reverseNum * 10 + temp % 10
-            if reverseNum >= temp {
-                break
+        }else {
+            var temp = x
+            var y = 0
+            while temp > 0 {
+                y = y * 10 + temp % 10
+                temp /= 10
             }
-            temp /= 10
+            
+            return y == x
         }
-        return temp == reverseNum || temp * 10 == reverseNum
     }
+    
+    //主要注意: 如果使用07题反转数字的方法解决本题目, 会有溢出的问题.
+//    func isPalindrome(_ x: Int) -> Bool {
+//
+//        if x < 0 || (x % 10 == 0 && x != 0) {
+//            return false
+//        }
+//
+//        if x / 9 == 0 {
+//            return true
+//        }
+//
+//        var temp = x
+//
+//        var reverseNum = 0
+//
+//        while reverseNum < temp {
+//            reverseNum = reverseNum * 10 + temp % 10
+//            if reverseNum >= temp {
+//                break
+//            }
+//            temp /= 10
+//        }
+//        return temp == reverseNum || temp * 10 == reverseNum
+//    }
 }
 
